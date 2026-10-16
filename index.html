@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>રામદૂત ઇન્ફોટેક | શ્રી કષ્ટભંજન દેવ પ્રેરિત IT, AI અને બિઝનેસ ગ્રોથ પ્લેટફોર્મ</title>
+    <title>રામદૂત ઇન્ફોટેક | બિઝનેસ શેર કરો અને 10x ગ્રો કરો | 1st Meeting FREE</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -28,6 +28,7 @@
                             950: '#020617',
                         },
                         gold: {
+                            300: '#fde047',
                             400: '#facc15',
                             500: '#eab308',
                         }
@@ -45,22 +46,28 @@
         .saffron-gradient {
             background: linear-gradient(135deg, #f97316 0%, #dc2626 100%);
         }
+        .gold-gradient {
+            background: linear-gradient(135deg, #fde047 0%, #f97316 50%, #eab308 100%);
+        }
         .gold-text {
             background: linear-gradient(to right, #fde047, #f97316, #fde047);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         .glass-card {
-            background: rgba(15, 23, 42, 0.8);
+            background: rgba(15, 23, 42, 0.85);
             backdrop-filter: blur(16px);
-            border: 1px solid rgba(249, 115, 22, 0.2);
+            border: 1px solid rgba(249, 115, 22, 0.25);
         }
         .glass-card:hover {
-            border-color: rgba(250, 204, 21, 0.6);
-            box-shadow: 0 10px 30px -10px rgba(249, 115, 22, 0.3);
+            border-color: rgba(250, 204, 21, 0.7);
+            box-shadow: 0 12px 35px -10px rgba(249, 115, 22, 0.35);
         }
         .divine-glow {
-            box-shadow: 0 0 50px -5px rgba(249, 115, 22, 0.45);
+            box-shadow: 0 0 55px -5px rgba(249, 115, 22, 0.5);
+        }
+        .free-glow {
+            box-shadow: 0 0 35px -5px rgba(16, 185, 129, 0.45);
         }
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
@@ -69,158 +76,197 @@
         .float-anim {
             animation: float 4s ease-in-out infinite;
         }
+        @keyframes pulse-border {
+            0%, 100% { border-color: rgba(250, 204, 21, 0.9); }
+            50% { border-color: rgba(249, 115, 22, 0.3); }
+        }
+        .animate-border {
+            animation: pulse-border 2s infinite;
+        }
     </style>
 </head>
-<body class="antialiased selection:bg-saffron-500 selection:text-white pb-16 md:pb-0">
+<body class="antialiased selection:bg-saffron-500 selection:text-white pb-20 md:pb-0">
 
-    <!-- Top Trust & Spiritual Banner -->
-    <div class="bg-gradient-to-r from-amber-950 via-saffron-700 to-amber-950 text-amber-100 text-xs md:text-sm py-2 px-4 border-b border-gold-500/30">
+    <!-- Top High-Urgency Free Meeting Announcement Bar -->
+    <div class="bg-gradient-to-r from-emerald-950 via-emerald-700 to-emerald-950 text-white text-xs md:text-sm py-2.5 px-4 border-b border-emerald-400/30">
         <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
-            <div class="flex items-center space-x-2 font-semibold">
-                <span class="inline-block w-2 h-2 rounded-full bg-gold-400 animate-ping"></span>
-                <span>॥ જય શ્રી કષ્ટભંજન દેવ - સાળંગપુર ધામ પ્રેરિત બિઝનેસ અને AI ગુરુકુળ ॥</span>
+            <div class="flex items-center space-x-2 font-bold">
+                <span class="px-2 py-0.5 rounded bg-gold-400 text-royal-950 text-[11px] font-black uppercase animate-pulse">FREE OFFER</span>
+                <span>🎁 પહેલી ૧-on-૧ બિઝનેસ મીટિંગ ૧૦૦% ફ્રી! તમારો બિઝનેસ શેર કરો અને 10x ગ્રોથ પ્લાન મેળવો.</span>
             </div>
-            <div class="hidden sm:flex items-center space-x-4 text-xs">
-                <span><i class="fa-solid fa-shield-halved text-gold-400 mr-1"></i> 8+ વર્ષનો IT & .NET Architecture અનુભવ</span>
-                <span>|</span>
-                <span><i class="fa-solid fa-check-double text-emerald-400 mr-1"></i> 100% પારદર્શક બિઝનેસ કન્સલ્ટિંગ</span>
-            </div>
+            <button onclick="openFreeMeetingModal()" class="hidden sm:inline-flex items-center space-x-1 bg-white text-emerald-900 px-3 py-1 rounded-full text-xs font-extrabold hover:bg-gold-300 transition shadow">
+                <span>અત્યારે જ ફ્રી મીટિંગ બુક કરો</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
         </div>
     </div>
 
-    <!-- Main Responsive Navbar -->
-    <header class="sticky top-0 z-50 bg-royal-950/90 backdrop-blur-xl border-b border-slate-800">
+    <!-- Main Responsive Navbar with Custom Ramdoot Infotech Logo -->
+    <header class="sticky top-0 z-50 bg-royal-950/95 backdrop-blur-xl border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <!-- Brand Logo -->
-                <a href="#" class="flex items-center space-x-3 group">
-                    <div class="w-12 h-12 rounded-2xl saffron-gradient flex items-center justify-center shadow-lg shadow-saffron-500/30 border border-gold-400/40 group-hover:scale-105 transition">
-                        <i class="fa-solid fa-om text-2xl text-white"></i>
+                
+                <!-- CUSTOM RAMDOOT INFOTECH SVG LOGO (Gada + Tech Circuit + Saffron Flag) -->
+                <a href="#home" class="flex items-center space-x-3.5 group">
+                    <div class="relative w-14 h-14 rounded-2xl p-0.5 gold-gradient shadow-lg shadow-saffron-500/30 group-hover:scale-105 transition duration-300">
+                        <div class="w-full h-full bg-royal-950 rounded-[14px] flex items-center justify-center relative overflow-hidden">
+                            <!-- Custom SVG Emblem: Hanuman Gada + Digital Nodes -->
+                            <svg class="w-11 h-11" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="goldGrad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+                                        <stop offset="0%" stop-color="#fde047"/>
+                                        <stop offset="50%" stop-color="#f97316"/>
+                                        <stop offset="100%" stop-color="#eab308"/>
+                                    </linearGradient>
+                                </defs>
+                                <!-- Outer Tech Hexagon Ring -->
+                                <path d="M32 4L56 18V46L32 60L8 46V18L32 4Z" stroke="url(#goldGrad)" stroke-width="2" stroke-dasharray="6 3" fill="rgba(249,115,22,0.08)"/>
+                                <!-- Victory Bhagwa Dhwaja (Flag) at Top Right -->
+                                <path d="M32 10L48 16L32 22V10Z" fill="#f97316"/>
+                                <!-- Hanumanji Gada (Mace) Crown & Sphere -->
+                                <circle cx="32" cy="24" r="10" fill="url(#goldGrad)"/>
+                                <path d="M22 24C22 20 42 20 42 24" stroke="#020617" stroke-width="2"/>
+                                <!-- Tech Circuit Dots on Gada -->
+                                <circle cx="29" cy="22" r="1.5" fill="#020617"/>
+                                <circle cx="35" cy="22" r="1.5" fill="#020617"/>
+                                <path d="M29 22L32 26L35 22" stroke="#020617" stroke-width="1.3"/>
+                                <!-- Gada Handle (Shaft) -->
+                                <rect x="29.5" y="34" width="5" height="20" rx="2.5" fill="url(#goldGrad)"/>
+                                <circle cx="32" cy="55" r="3" fill="#fde047"/>
+                            </svg>
+                        </div>
                     </div>
                     <div>
-                        <span class="text-xl md:text-2xl font-black tracking-tight text-white block leading-none">રામદૂત <span class="text-saffron-500">ઇન્ફોટેક</span></span>
-                        <span class="text-[11px] text-gold-400 font-medium tracking-wider">AI • BUSINESS • GROWTH</span>
+                        <div class="flex items-center gap-1.5">
+                            <span class="text-xl sm:text-2xl font-black tracking-tight text-white leading-none">રામદૂત</span>
+                            <span class="text-xl sm:text-2xl font-black tracking-tight gold-text leading-none">ઇન્ફોટેક</span>
+                        </div>
+                        <span class="text-[10px] sm:text-[11px] text-slate-300 font-bold tracking-widest uppercase block mt-1">
+                            🚩 HANUMANJI ROLE MODEL • AI & 10X GROWTH
+                        </span>
                     </div>
                 </a>
 
                 <!-- Desktop Navigation -->
-                <nav class="hidden lg:flex items-center space-x-7 text-sm font-semibold text-slate-300">
-                    <a href="#home" class="hover:text-saffron-400 transition">હોમ</a>
-                    <a href="#hanuman-path" class="hover:text-saffron-400 transition">હનુમાનજીનો સંઘર્ષ પથ</a>
-                    <a href="#pricing-plans" class="text-gold-400 hover:text-gold-300 transition flex items-center gap-1">
-                        <i class="fa-solid fa-star text-xs"></i> મીટિંગ પ્લાન્સ (₹1K-₹10K)
+                <nav class="hidden lg:flex items-center space-x-6 text-sm font-bold text-slate-200">
+                    <a href="#share-business" class="text-emerald-400 hover:text-emerald-300 transition flex items-center gap-1">
+                        <i class="fa-solid fa-rocket"></i> બિઝનેસ શેર કરો (10x)
                     </a>
-                    <a href="#modules" class="hover:text-saffron-400 transition">ડીપ બિઝનેસ મોડ્યુલ્સ</a>
+                    <a href="#hanuman-path" class="hover:text-saffron-400 transition">હનુમાનજીનો સંઘર્ષ પથ</a>
+                    <a href="#pricing-plans" class="text-gold-400 hover:text-gold-300 transition">
+                        🎁 1st મીટિંગ FREE & પ્લાન્સ
+                    </a>
+                    <a href="#modules" class="hover:text-saffron-400 transition">ડીપ મોડ્યુલ્સ</a>
                     <a href="#ai-growth" class="hover:text-saffron-400 transition">AI શીખો</a>
-                    <a href="#trust" class="hover:text-saffron-400 transition">ભરોસો (Trust)</a>
                 </nav>
 
-                <!-- WhatsApp CTA Button -->
+                <!-- Action CTA Buttons -->
                 <div class="hidden md:flex items-center space-x-3">
-                    <button onclick="openWhatsAppDirect('નમસ્તે રામદૂત ઇન્ફોટેક! મારે બિઝનેસ ગ્રોથ અને AI મીટિંગ પ્લાન વિશે માહિતી જોઈએ છે.')" class="bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-2.5 rounded-xl font-bold text-sm flex items-center space-x-2 shadow-lg shadow-emerald-600/30 transition transform hover:-translate-y-0.5">
-                        <i class="fa-brands fa-whatsapp text-lg"></i>
-                        <span>WhatsApp પર જોડાઓ</span>
+                    <button onclick="openFreeMeetingModal()" class="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs sm:text-sm flex items-center space-x-2 shadow-lg shadow-emerald-600/30 transition transform hover:-translate-y-0.5">
+                        <i class="fa-solid fa-gift text-gold-300"></i>
+                        <span>૧લી મીટિંગ FREE બુક કરો</span>
                     </button>
                 </div>
 
                 <!-- Mobile Hamburger Button -->
-                <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="lg:hidden text-slate-300 hover:text-white p-2 rounded-lg border border-slate-800">
-                    <i id="menu-icon" class="fa-solid fa-bars text-2xl"></i>
+                <button onclick="toggleMobileMenu()" class="lg:hidden text-slate-200 hover:text-white p-2.5 rounded-xl border border-slate-800 bg-slate-900/80">
+                    <i class="fa-solid fa-bars text-xl"></i>
                 </button>
             </div>
         </div>
 
         <!-- Mobile Menu Dropdown -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-royal-900 border-b border-slate-800 px-4 pt-3 pb-6 space-y-3">
-            <a href="#home" onclick="toggleMobileMenu()" class="block py-2 px-3 rounded-lg hover:bg-slate-800 text-slate-200 font-medium">🏠 હોમ</a>
+        <div id="mobile-menu" class="hidden lg:hidden bg-royal-900 border-b border-slate-800 px-4 pt-3 pb-6 space-y-2.5">
+            <a href="#share-business" onclick="toggleMobileMenu()" class="block py-2.5 px-3 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 font-bold">🚀 બિઝનેસ શેર કરો અને 10x ગ્રો કરો</a>
+            <a href="#pricing-plans" onclick="toggleMobileMenu()" class="block py-2.5 px-3 rounded-xl bg-saffron-500/15 border border-saffron-500/30 text-gold-400 font-bold">🎁 ૧લી મીટિંગ FREE + ૪ પ્લાન્સ</a>
             <a href="#hanuman-path" onclick="toggleMobileMenu()" class="block py-2 px-3 rounded-lg hover:bg-slate-800 text-slate-200 font-medium">🚩 હનુમાનજીનો સંઘર્ષ અને બિઝનેસ બોધ</a>
-            <a href="#pricing-plans" onclick="toggleMobileMenu()" class="block py-2 px-3 rounded-lg bg-saffron-500/10 border border-saffron-500/30 text-gold-400 font-bold">⭐ મીટિંગ અને માર્ગદર્શન પ્લાન્સ (₹1,000 થી શરૂ)</a>
             <a href="#modules" onclick="toggleMobileMenu()" class="block py-2 px-3 rounded-lg hover:bg-slate-800 text-slate-200 font-medium">📊 ડીપ બિઝનેસ મોડ્યુલ્સ</a>
             <a href="#ai-growth" onclick="toggleMobileMenu()" class="block py-2 px-3 rounded-lg hover:bg-slate-800 text-slate-200 font-medium">🤖 AI ટૂલ્સ અને ઝડપી ગ્રોથ</a>
-            <a href="#trust" onclick="toggleMobileMenu()" class="block py-2 px-3 rounded-lg hover:bg-slate-800 text-slate-200 font-medium">🛡️ અમારી વિશ્વસનીયતા (Why Trust Us)</a>
-            <button onclick="openWhatsAppDirect('જય શ્રી રામ! મારે રામદૂત ઇન્ફોટેકના બિઝનેસ પ્લાન વિશે જાણવું છે.')" class="w-full mt-2 bg-emerald-600 text-white py-3 rounded-xl font-bold flex items-center justify-center space-x-2">
-                <i class="fa-brands fa-whatsapp text-xl"></i>
-                <span>WhatsApp પર તરત મેસેજ કરો</span>
+            <button onclick="openFreeMeetingModal(); toggleMobileMenu();" class="w-full mt-2 saffron-gradient text-white py-3 rounded-xl font-extrabold flex items-center justify-center space-x-2 shadow-lg">
+                <i class="fa-solid fa-gift"></i>
+                <span>૧લી મીટિંગ ૧૦૦% FREE બુક કરો</span>
             </button>
         </div>
     </header>
 
-    <!-- HERO SECTION: SARANGPUR HANUMANJI (KING OF SALANGPUR) -->
-    <section id="home" class="relative overflow-hidden py-12 md:py-20 lg:py-24 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-950/40 via-royal-950 to-royal-950">
-        <!-- Decorative Background Aura -->
+    <!-- HERO SECTION: SARANGPUR HANUMANJI + SHARE BUSINESS & GROW 10X + 1ST MEETING FREE -->
+    <section id="home" class="relative overflow-hidden py-10 md:py-16 lg:py-20 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-950/50 via-royal-950 to-royal-950">
         <div class="absolute top-10 right-10 w-96 h-96 bg-saffron-600/20 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute bottom-10 left-10 w-80 h-80 bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 left-10 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
                 
-                <!-- Left Column: Inspiring Business & AI Message -->
+                <!-- Left Column: High-Converting Hook -->
                 <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                    <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-saffron-500/15 border border-saffron-500/40 text-gold-400 text-xs sm:text-sm font-bold">
-                        <i class="fa-solid fa-gopuram"></i>
-                        <span>શ્રી કષ્ટભંજન દેવ (સાળંગપુર) ની અસીમ પ્રેરણાથી</span>
+                    
+                    <div class="inline-flex flex-wrap items-center justify-center lg:justify-start gap-2">
+                        <span class="px-3.5 py-1.5 rounded-full bg-saffron-500/20 border border-saffron-500/50 text-gold-300 text-xs sm:text-sm font-extrabold">
+                            🚩 શ્રી કષ્ટભંજન દેવ (સાળંગપુર) પ્રેરિત IT & AI કંપની
+                        </span>
+                        <span class="px-3.5 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-500/50 text-emerald-300 text-xs sm:text-sm font-extrabold">
+                            🎁 1st Time Meeting 100% FREE
+                        </span>
                     </div>
 
                     <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight text-white">
-                        બિઝનેસમાં ગમે તેવું <span class="gold-text">સંકટ આવે, હાર નથી માનવાની!</span>
+                        તમારો બિઝનેસ અમને શેર કરો, અને <span class="gold-text">10x ઝડપથી ગ્રો કરો!</span>
                     </h1>
 
-                    <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                        જેમ હનુમાનજીએ સમુદ્ર ઓળંગતી વખતે અને સંજીવની લાવતી વખતે અનેક વિઘ્નો આવ્યા છતાં લક્ષ્ય છોડ્યું નહીં, તેમ તમારા વેપારમાં આવતી દરેક મંદી, સ્ટાફની સમસ્યા કે ટેકનોલોજીના અભાવને દૂર કરવા <strong class="text-white">રામદૂત ઇન્ફોટેક</strong> તમારી સાથે ઊભું છે. 
-                        <span class="block mt-2 text-gold-400 font-semibold">✨ સ્પેશિયલ પ્લેટફોર્મ: બિઝનેસ ઓનર્સ માટે, AI શીખવા માંગતા લોકો માટે અને 10x ઝડપી ગ્રોથ કરવા માટે.</span>
+                    <p class="text-base sm:text-lg text-slate-200 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        ધંધામાં ગમે તેવું સંકટ આવે, હનુમાનજીની જેમ <strong class="text-gold-400">ક્યારેય હાર નથી માનવાની!</strong> તમારો વેપાર નાનો હોય કે મોટો—અમારી સાથે <strong class="text-emerald-400">પહેલી મીટિંગ બિલકુલ ફ્રી</strong> કરો. અમે તમને બિઝનેસ કેવી રીતે કરવો, સ્ટાફ પાસેથી કેવી રીતે કરાવડાવો અને <strong class="text-white">AI ટૂલ્સથી ધંધો 10 ગણો કેવી રીતે વધારવો</strong> તેનો પ્રેક્ટિકલ રસ્તો બતાવીશું.
                     </p>
 
-                    <!-- Key Value Badges -->
-                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2 text-left">
-                        <div class="glass-card p-3 rounded-xl flex items-center space-x-3">
-                            <div class="w-10 h-10 rounded-lg bg-saffron-500/20 flex items-center justify-center text-saffron-400 shrink-0">
-                                <i class="fa-solid fa-handshake-simple text-lg"></i>
+                    <!-- Highlighted Offer Box: 1 Time Meeting Free -->
+                    <div class="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-emerald-950/90 via-slate-900 to-emerald-950/90 border-2 border-emerald-400/60 free-glow text-left max-w-2xl mx-auto lg:mx-0">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                            <div class="space-y-1">
+                                <div class="inline-flex items-center gap-1.5 text-emerald-400 font-black text-xs uppercase tracking-wider">
+                                    <i class="fa-solid fa-Unlock-keyhole"></i> સ્પેશિયલ વેલકમ ઓફર (કોઈ ચાર્જ નહીં)
+                                </div>
+                                <h3 class="text-lg sm:text-xl font-black text-white">૧ વાર ફ્રી મીટિંગ કરો (1st Consultation ₹0)</h3>
+                                <p class="text-xs sm:text-sm text-slate-300">પહેલા અમને મળો/વાત કરો, તમારો બિઝનેસ શેર કરો, અમારું પ્લાનિંગ જુઓ અને ૧૦૦% વિશ્વાસ બેસે પછી જ આગળ જોડાઓ!</p>
                             </div>
-                            <div>
-                                <div class="text-xs text-slate-400">મીટિંગ પ્લાન શરૂ</div>
-                                <div class="text-sm font-bold text-white">માત્ર ₹1,000 થી</div>
-                            </div>
-                        </div>
-                        <div class="glass-card p-3 rounded-xl flex items-center space-x-3">
-                            <div class="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400 shrink-0">
-                                <i class="fa-solid fa-brain text-lg"></i>
-                            </div>
-                            <div>
-                                <div class="text-xs text-slate-400">લેટેસ્ટ ટેકનોલોજી</div>
-                                <div class="text-sm font-bold text-white">AI & Automation</div>
-                            </div>
-                        </div>
-                        <div class="glass-card p-3 rounded-xl flex items-center space-x-3 col-span-2 sm:col-span-1">
-                            <div class="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
-                                <i class="fa-solid fa-code text-lg"></i>
-                            </div>
-                            <div>
-                                <div class="text-xs text-slate-400">ફાઉન્ડર એક્સપર્ટ</div>
-                                <div class="text-sm font-bold text-white">8+ Yrs .NET Dev</div>
-                            </div>
+                            <button onclick="openFreeMeetingModal()" class="shrink-0 px-6 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-royal-950 font-black text-sm shadow-xl transition transform hover:scale-105 text-center">
+                                ફ્રી મીટિંગ બુક કરો →
+                            </button>
                         </div>
                     </div>
 
-                    <!-- CTA Buttons -->
-                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
-                        <a href="#pricing-plans" class="w-full sm:w-auto px-8 py-4 rounded-2xl saffron-gradient text-white font-extrabold text-base shadow-xl shadow-saffron-600/30 hover:opacity-95 transition flex items-center justify-center space-x-2">
-                            <span>૧-on-૧ મીટિંગ પ્લાન જુઓ (₹1K - ₹10K)</span>
-                            <i class="fa-solid fa-arrow-right"></i>
+                    <!-- Primary CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#share-business" class="w-full sm:w-auto px-8 py-4 rounded-2xl saffron-gradient text-white font-black text-base shadow-xl shadow-saffron-600/30 hover:opacity-95 transition flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-share-nodes"></i>
+                            <span>બિઝનેસ શેર કરો અને 10x ગ્રો કરો</span>
                         </a>
-                        <button onclick="openWhatsAppDirect('જય શ્રી રામ! મારે મારા બિઝનેસને આગળ વધારવા અને AI શીખવા માટે તમારી સાથે વાત કરવી છે.')" class="w-full sm:w-auto px-7 py-4 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white border border-slate-700 font-bold text-base transition flex items-center justify-center space-x-2">
-                            <i class="fa-brands fa-whatsapp text-emerald-400 text-xl"></i>
-                            <span>ડાયરેક્ટ WhatsApp પૂછપરછ</span>
-                        </button>
+                        <a href="#pricing-plans" class="w-full sm:w-auto px-7 py-4 rounded-2xl bg-slate-900 hover:bg-slate-800 text-gold-400 border border-gold-400/40 font-bold text-base transition flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-layer-group"></i>
+                            <span>મીટિંગ પ્લાન્સ જુઓ (₹0 થી ₹10K)</span>
+                        </a>
+                    </div>
+
+                    <!-- Instant Trust Indicators -->
+                    <div class="pt-4 grid grid-cols-3 gap-3 border-t border-slate-800/80 text-center lg:text-left">
+                        <div>
+                            <div class="text-xl sm:text-2xl font-black text-gold-400">100% FREE</div>
+                            <div class="text-xs text-slate-400">પહેલી બિઝનેસ મીટિંગ</div>
+                        </div>
+                        <div>
+                            <div class="text-xl sm:text-2xl font-black text-white">8+ વર્ષ</div>
+                            <div class="text-xs text-slate-400">.NET & IT આર્કિટેક્ચર અનુભવ</div>
+                        </div>
+                        <div>
+                            <div class="text-xl sm:text-2xl font-black text-emerald-400">10x ગ્રોથ</div>
+                            <div class="text-xs text-slate-400">AI + બિઝનેસ ઓટોમેશન</div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Right Column: HD Sarangpur Hanumanji (King of Salangpur) Showcase -->
+                <!-- Right Column: HD Sarangpur Hanumanji (King of Salangpur) with Brand Emblem -->
                 <div class="lg:col-span-5">
                     <div class="relative mx-auto max-w-md lg:max-w-none">
-                        <!-- Glowing Aura Frame -->
                         <div class="relative rounded-3xl p-2 bg-gradient-to-b from-gold-400 via-saffron-600 to-amber-900 divine-glow float-anim">
                             <div class="relative rounded-2xl overflow-hidden bg-royal-950 aspect-[4/5]">
-                                <!-- Authentic Wikimedia Commons HD Photo of King of Salangpur (Sarangpur Hanumanji) -->
                                 <img 
                                     id="hanuman-hero-img"
                                     src="https://commons.wikimedia.org/wiki/Special:FilePath/King_of_Salangpur_Statue.jpg" 
@@ -230,23 +276,23 @@
                                 />
                                 <div class="absolute inset-0 bg-gradient-to-t from-royal-950 via-royal-950/20 to-transparent"></div>
                                 
-                                <!-- Top Badge on Image -->
+                                <!-- Top Overlay -->
                                 <div class="absolute top-4 left-4 right-4 flex justify-between items-center">
-                                    <span class="px-3 py-1 rounded-full bg-royal-950/80 backdrop-blur-md border border-gold-400/50 text-gold-400 text-xs font-bold">
-                                        🚩 કિંગ ઓફ સાળંગપુર (HD)
+                                    <span class="px-3 py-1.5 rounded-full bg-royal-950/85 backdrop-blur-md border border-gold-400/60 text-gold-300 text-xs font-extrabold shadow">
+                                        🚩 શ્રી કષ્ટભંજન દેવ (સાળંગપુર)
                                     </span>
-                                    <button onclick="switchHanumanPhoto()" class="px-3 py-1 rounded-full bg-saffron-600/90 hover:bg-saffron-500 text-white text-xs font-bold shadow cursor-pointer transition" title="બીજા દર્શન કરો">
+                                    <button onclick="switchHanumanPhoto()" class="px-3 py-1.5 rounded-full bg-saffron-600 hover:bg-saffron-500 text-white text-xs font-bold shadow cursor-pointer transition">
                                         <i class="fa-solid fa-camera-rotate mr-1"></i> દર્શન બદલો
                                     </button>
                                 </div>
 
-                                <!-- Bottom Quote Overlay -->
-                                <div class="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-royal-950/90 backdrop-blur-md border border-saffron-500/40">
-                                    <p class="text-gold-400 font-bold text-sm sm:text-base leading-snug">
-                                        "કષ્ટભંજન દેવનો એક જ સંદેશ: સંકટ ગમે તેટલું મોટું હોય, સાચી દિશા અને અથાગ પુરુષાર્થથી વિજય નિશ્ચિત છે!"
-                                    </p>
-                                    <p class="text-slate-400 text-xs mt-1">
-                                        — રામદૂત ઇન્ફોટેકના રોલ મોડલ અને પ્રેરણાસ્ત્રોત
+                                <!-- Bottom Inspirational Overlay -->
+                                <div class="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-royal-950/90 backdrop-blur-md border border-gold-400/40">
+                                    <div class="flex items-center gap-2 text-xs font-bold text-emerald-400 mb-1">
+                                        <i class="fa-solid fa-bolt"></i> રોલ મોડલ: હનુમાનજી (સંકટમોચક)
+                                    </div>
+                                    <p class="text-white font-bold text-sm sm:text-base leading-snug">
+                                        "જેમ હનુમાનજી માટે કોઈ સમુદ્ર મોટો નહોતો, તેમ સાચી AI ટેકનોલોજી અને માર્ગદર્શન હોય તો તમારા બિઝનેસ માટે કોઈ લક્ષ્ય અશક્ય નથી!"
                                     </p>
                                 </div>
                             </div>
@@ -258,92 +304,194 @@
         </div>
     </section>
 
-    <!-- SECTION 2: HANUMANJI'S LIFE JOURNEY & BUSINESS RESILIENCE -->
-    <section id="hanuman-path" class="py-16 md:py-24 bg-royal-900/60 border-y border-slate-800/80">
+    <!-- NEW HIGH-CONVERTING SECTION: "SHARE YOUR BUSINESS & GROW 10X" INTERACTIVE DIAGNOSTIC -->
+    <section id="share-business" class="py-16 md:py-20 bg-gradient-to-b from-royal-950 via-royal-900 to-royal-950 border-y border-saffron-500/30">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card rounded-3xl p-6 sm:p-10 md:p-12 border-2 border-gold-400/50 shadow-2xl relative overflow-hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    
+                    <!-- Left Description -->
+                    <div class="lg:col-span-6 space-y-4">
+                        <span class="px-3 py-1 rounded-full bg-saffron-500/20 text-gold-400 text-xs font-black uppercase tracking-wider">
+                            🚀 SHARE BUSINESS & GROW 10X
+                        </span>
+                        <h2 class="text-2xl sm:text-4xl font-black text-white leading-tight">
+                            તમારો બિઝનેસ અહીં શેર કરો, અમે બનાવી આપીશું <span class="gold-text">10x ગ્રોથ પ્લાન!</span>
+                        </h2>
+                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                            તમે કયો ધંધો કરો છો? અત્યારે ક્યાં અટવાયેલા છો? નીચેની વિગત ભરીને અમને મોકલો. અમારી ટીમ તમારા બિઝનેસનો અભ્યાસ કરીને **પહેલી ફ્રી મીટિંગમાં** તમને બતાવશે કે:
+                        </p>
+                        <ul class="space-y-2.5 text-sm text-slate-200 pt-2">
+                            <li class="flex items-center gap-2.5">
+                                <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                                <span>તમારા ધંધામાં ગ્રાહકો અને વેચાણ 10 ગણું કેવી રીતે વધશે?</span>
+                            </li>
+                            <li class="flex items-center gap-2.5">
+                                <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                                <span>કયા AI ટૂલ્સ વાપરવાથી તમારો સમય અને ખર્ચ બચશે?</span>
+                            </li>
+                            <li class="flex items-center gap-2.5">
+                                <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                                <span>સ્ટાફ પાસેથી ઓટોપાઈલટ મોડ પર કામ કેવી રીતે લેવું?</span>
+                            </li>
+                        </ul>
+                        <div class="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center gap-3 mt-4">
+                            <i class="fa-solid fa-headset text-2xl text-emerald-400"></i>
+                            <div class="text-xs sm:text-sm text-emerald-200">
+                                <strong>૧૦૦% ફ્રી પ્રથમ કન્સલ્ટન્સી:</strong> આ ફોર્મ ભરવાનો કે પહેલી વાર વાત કરવાનો કોઈ જ ચાર્જ નથી!
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Interactive Share Business Form -->
+                    <div class="lg:col-span-6">
+                        <form onsubmit="submitShareBusinessForm(event)" class="bg-royal-950/95 p-6 sm:p-8 rounded-2xl border border-slate-800 space-y-4 shadow-xl">
+                            <h3 class="text-lg font-extrabold text-white flex items-center gap-2 border-b border-slate-800 pb-3">
+                                <i class="fa-solid fa-briefcase text-saffron-500"></i>
+                                <span>તમારા બિઝનેસની વિગત શેર કરો (1st Meet Free)</span>
+                            </h3>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs text-slate-300 mb-1 font-bold">તમારું નામ *</label>
+                                    <input type="text" id="sb-name" required placeholder="દા.ત. દિપકભાઈ પટેલ" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white focus:border-saffron-500 focus:outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-xs text-slate-300 mb-1 font-bold">તમારું શહેર *</label>
+                                    <input type="text" id="sb-city" required placeholder="દા.ત. અમદાવાદ / ગાંધીનગર / સુરત" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white focus:border-saffron-500 focus:outline-none">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs text-slate-300 mb-1 font-bold">તમારા બિઝનેસનું નામ અને પ્રકાર *</label>
+                                <input type="text" id="sb-biz" required placeholder="દા.ત. મેન્યુફેક્ચરિંગ / ટ્રેડિંગ / શોરૂમ / IT / સર્વિસ" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white focus:border-saffron-500 focus:outline-none">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs text-slate-300 mb-1 font-bold">અત્યારે બિઝનેસમાં સૌથી મોટો પડકાર (Challenge) શું છે?</label>
+                                <select id="sb-challenge" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white focus:border-saffron-500 focus:outline-none">
+                                    <option value="નવા ગ્રાહકો (Leads) અને વેચાણમાં10x વધારો કરવો છે">નવા ગ્રાહકો (Leads) અને વેચાણમાં 10x વધારો કરવો છે</option>
+                                    <option value="બિઝનેસમાં AI અને ઓટોમેશન ગોઠવવું છે">બિઝનેસમાં AI અને ઓટોમેશન ગોઠવવું છે</option>
+                                    <option value="સ્ટાફ પાસેથી કામ લેવાની સિસ્ટમ (SOP) બનાવવી છે">સ્ટાફ પાસેથી કામ લેવાની સિસ્ટમ (SOP) બનાવવી છે</option>
+                                    <option value="વેબસાઈટ, એપ કે કસ્ટમ સોફ્ટવેર બનાવવું છે">વેબસાઈટ, એપ કે કસ્ટમ સોફ્ટવેર બનાવવું છે</option>
+                                    <option value="નવો બિઝનેસ શરૂ કરવો છે અને માર્ગદર્શન જોઈએ છે">નવો બિઝનેસ શરૂ કરવો છે અને માર્ગદર્શન જોઈએ છે</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="w-full py-4 rounded-xl saffron-gradient text-white font-black text-sm sm:text-base shadow-lg shadow-saffron-500/30 hover:opacity-95 transition flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-whatsapp text-xl"></i>
+                                <span>બિઝનેસ શેર કરો & ૧લી ફ્રી મીટિંગ બુક કરો</span>
+                            </button>
+                            <p class="text-[11px] text-center text-slate-400">
+                                🔒 તમારી માહિતી ૧૦૦% સુરક્ષિત રહેશે. ક્લિક કરતા જ WhatsApp પર ડાયરેક્ટ મેસેજ ખુલશે.
+                            </p>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: HANUMANJI'S LIFE JOURNEY & NEVER GIVE UP IN BUSINESS -->
+    <section id="hanuman-path" class="py-16 md:py-24 bg-royal-900/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-14">
                 <span class="text-saffron-400 font-bold text-sm uppercase tracking-widest">હનુમાનજીનું જીવન = બિઝનેસની સફળતા</span>
                 <h2 class="text-2xl sm:text-4xl font-black text-white mt-2">
-                    હનુમાનજીના જીવનના ૪ પ્રસંગો જે શીખવે છે: <span class="gold-text">બિઝનેસમાં ક્યારેય હાર ન માનવી!</span>
+                    હનુમાનજીના જીવનના ૪ પ્રસંગો શીખવે છે: <span class="gold-text">બિઝનેસમાં ગમે તે સંકટ આવે, હાર ન માનવી!</span>
                 </h2>
-                <p class="text-slate-400 mt-3 text-sm sm:text-base">
-                    ધંધામાં નુકસાન, કોમ્પિટિશન કે ટેકનોલોજીનો ડર લાગે ત્યારે હનુમાનજીના આ 4 સિદ્ધાંતોને યાદ કરો. અમે આ જ સિદ્ધાંતો પર તમારા બિઝનેસને આગળ વધારીએ છીએ.
-                </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Lesson 1 -->
-                <div class="glass-card rounded-2xl p-6 relative overflow-hidden group">
+                <div class="glass-card rounded-2xl p-6 relative overflow-hidden">
                     <div class="text-5xl font-black text-saffron-500/15 absolute top-2 right-4">01</div>
-                    <div class="w-12 h-12 rounded-xl bg-saffron-500/20 border border-saffron-500/40 flex items-center justify-center text-saffron-400 text-xl mb-5">
+                    <div class="w-12 h-12 rounded-xl bg-saffron-500/20 border border-saffron-500/40 flex items-center justify-center text-saffron-400 text-xl mb-4">
                         <i class="fa-solid fa-sun"></i>
                     </div>
                     <h3 class="text-lg font-bold text-white mb-2">૧. જાંબુવંતજીની યાદ (પોતાની તાકાત ઓળખો)</h3>
-                    <p class="text-xs text-gold-400 font-semibold mb-3">હનુમાનજીનો પ્રસંગ: સમુદ્ર કિનારે શક્તિનું સ્મરણ</p>
                     <p class="text-sm text-slate-300 leading-relaxed">
-                        હનુમાનજીમાં અપાર શક્તિ હતી પણ તેઓ ભૂલી ગયા હતા, જાંબુવંતજીએ યાદ અપાવી. તમારા બિઝનેસમાં પણ 10 ગણો ગ્રોથ કરવાની તાકાત છે—અમે "જાંબુવંત" બનીને તમને AI અને ડિજિટલ સિસ્ટમની તાકાત બતાવીશું!
+                        હનુમાનજીમાં અપાર શક્તિ હતી પણ તેઓ ભૂલી ગયા હતા, જાંબુવંતજીએ યાદ અપાવી. તમારા બિઝનેસમાં પણ 10x ગ્રોથ કરવાની તાકાત છે—અમે "જાંબુવંત" બનીને તમને AI અને ડિજિટલ સિસ્ટમની તાકાત બતાવીશું!
                     </p>
                 </div>
 
-                <!-- Lesson 2 -->
-                <div class="glass-card rounded-2xl p-6 relative overflow-hidden group">
+                <div class="glass-card rounded-2xl p-6 relative overflow-hidden">
                     <div class="text-5xl font-black text-saffron-500/15 absolute top-2 right-4">02</div>
-                    <div class="w-12 h-12 rounded-xl bg-saffron-500/20 border border-saffron-500/40 flex items-center justify-center text-saffron-400 text-xl mb-5">
+                    <div class="w-12 h-12 rounded-xl bg-saffron-500/20 border border-saffron-500/40 flex items-center justify-center text-saffron-400 text-xl mb-4">
                         <i class="fa-solid fa-water"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-2">૨. સુરસા અને મૈનાક પર્વત (સંકટમાં બુદ્ધિચાતુર્ય)</h3>
-                    <p class="text-xs text-gold-400 font-semibold mb-3">હનુમાનજીનો પ્રસંગ: સમુદ્ર માર્ગના વિઘ્નો</p>
+                    <h3 class="text-lg font-bold text-white mb-2">૨. સુરસા અને મૈનાક (સંકટમાં બુદ્ધિચાતુર્ય)</h3>
                     <p class="text-sm text-slate-300 leading-relaxed">
-                        રસ્તામાં આરામની લાલચ (મૈનાક) અને રાક્ષસી વિઘ્ન (સુરસા) બંને આવ્યા, પણ હનુમાનજીએ સૂક્ષ્મ રૂપ ધારણ કરીને રસ્તો કાઢ્યો. બિઝનેસમાં મંદી કે હરીફાઈ આવે ત્યારે ગભરાવાને બદલે Smart AI Strategy થી રસ્તો કાઢતા અમે શીખવીશું.
+                        સમુદ્ર માર્ગમાં અનેક વિઘ્નો આવ્યા, પણ હનુમાનજીએ સૂક્ષ્મ રૂપ ધારણ કરીને રસ્તો કાઢ્યો. બિઝનેસમાં મંદી કે હરીફાઈ આવે ત્યારે ગભરાવાને બદલે Smart AI Strategy થી રસ્તો કાઢતા અમે શીખવીશું.
                     </p>
                 </div>
 
-                <!-- Lesson 3 -->
-                <div class="glass-card rounded-2xl p-6 relative overflow-hidden group">
+                <div class="glass-card rounded-2xl p-6 relative overflow-hidden">
                     <div class="text-5xl font-black text-saffron-500/15 absolute top-2 right-4">03</div>
-                    <div class="w-12 h-12 rounded-xl bg-saffron-500/20 border border-saffron-500/40 flex items-center justify-center text-saffron-400 text-xl mb-5">
+                    <div class="w-12 h-12 rounded-xl bg-saffron-500/20 border border-saffron-500/40 flex items-center justify-center text-saffron-400 text-xl mb-4">
                         <i class="fa-solid fa-mountain-sun"></i>
                     </div>
                     <h3 class="text-lg font-bold text-white mb-2">૩. દ્રોણાગિરિ પર્વત (Result-Oriented અભિગમ)</h3>
-                    <p class="text-xs text-gold-400 font-semibold mb-3">હનુમાનજીનો પ્રસંગ: સંજીવની બુટ્ટીની ઓળખ</p>
                     <p class="text-sm text-slate-300 leading-relaxed">
-                        જ્યારે સંજીવની જડીબુટ્ટી ઓળખાઈ નહીં, ત્યારે હનુમાનજીએ બહાનું ન કાઢ્યું—આખો પર્વત જ ઉપાડી લીધો! બિઝનેસમાં પણ "આ નહીં થાય" કહેવાને બદલે ગમે તે સંજોગોમાં રિઝલ્ટ કેવી રીતે લાવવું અને સ્ટાફ પાસેથી કેવી રીતે કામ લેવું તે અમે શીખવીએ છીએ.
+                        જ્યારે સંજીવની ઓળખાઈ નહીં, ત્યારે હનુમાનજીએ બહાનું ન કાઢ્યું—આખો પર્વત ઉપાડી લીધો! બિઝનેસમાં પણ ગમે તે સંજોગોમાં રિઝલ્ટ કેવી રીતે લાવવું અને સ્ટાફ પાસેથી કેવી રીતે કામ લેવું તે અમે શીખવીએ છીએ.
                     </p>
                 </div>
 
-                <!-- Lesson 4 -->
-                <div class="glass-card rounded-2xl p-6 relative overflow-hidden group">
+                <div class="glass-card rounded-2xl p-6 relative overflow-hidden">
                     <div class="text-5xl font-black text-saffron-500/15 absolute top-2 right-4">04</div>
-                    <div class="w-12 h-12 rounded-xl bg-saffron-500/20 border border-saffron-500/40 flex items-center justify-center text-saffron-400 text-xl mb-5">
+                    <div class="w-12 h-12 rounded-xl bg-saffron-500/20 border border-saffron-500/40 flex items-center justify-center text-saffron-400 text-xl mb-4">
                         <i class="fa-solid fa-fire-flame-curved"></i>
                     </div>
                     <h3 class="text-lg font-bold text-white mb-2">૪. લંકા દહન (સંકટને જ હથિયાર બનાવો)</h3>
-                    <p class="text-xs text-gold-400 font-semibold mb-3">હનુમાનજીનો પ્રસંગ: પૂંછડીમાં લગાડેલી આગ</p>
                     <p class="text-sm text-slate-300 leading-relaxed">
-                        દુશ્મનોએ પૂંછડીમાં આગ લગાડી તો હનુમાનજીએ તે જ આગથી આખી લંકા બાળી નાખી! આજે લોકોને લાગે છે કે AI અને ઓનલાઇન માર્કેટિંગ નાના વેપારને ખતમ કરી દેશે—પણ અમે તે જ AI ને તમારું સૌથી મોટું હથિયાર બનાવી આપીશું.
+                        દુશ્મનોએ પૂંછડીમાં આગ લગાડી તો હનુમાનજીએ તે જ આગથી લંકા બાળી! આજે લોકોને ડર છે કે AI વેપાર ખતમ કરશે—અમે તે જ AI ને તમારા બિઝનેસનું સૌથી મોટું હથિયાર બનાવી આપીશું.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 3: 4 SIMPLE MEETING & CONSULTATION PLANS (₹1,000 TO ₹10,000) -->
+    <!-- SECTION: 1ST FREE MEETING + 4 SIMPLE PLANS (₹1,000 TO ₹10,000) -->
     <section id="pricing-plans" class="py-16 md:py-24 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <div class="inline-flex items-center space-x-2 px-4 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold mb-3">
-                    <i class="fa-solid fa-circle-check"></i>
-                    <span>100% પારદર્શક ફી • કોઈ છૂપો ચાર્જ નહીં • પહેલા મળો, સમજો અને પછી આગળ વધો</span>
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-500/40 text-emerald-300 text-xs font-extrabold mb-3">
+                    <i class="fa-solid fa-gift"></i>
+                    <span>પહેલી મીટિંગ ૧૦૦% ફ્રી • સંતોષ થાય પછી જ ₹1,000 થી ₹10,000 ના પ્લાનમાં જોડાઓ</span>
                 </div>
                 <h2 class="text-3xl sm:text-4xl font-black text-white">
-                    બિઝનેસ મીટિંગ અને <span class="gold-text">માર્ગદર્શનના ૪ સિમ્પલ પ્લાન</span>
+                    પહેલા <span class="text-emerald-400">૧ વાર ફ્રી મળો</span>, પછી પસંદ કરો અમારા <span class="gold-text">૪ સિમ્પલ પ્લાન</span>
                 </h2>
                 <p class="text-slate-300 mt-3 text-sm sm:text-base">
-                    અમે સીધા લાખો રૂપિયાના પેકેજ વેચતા નથી! પહેલા આપણે મળીશું, તમારા બિઝનેસને ઊંડાણપૂર્વક સમજીશું અને AI તથા સિસ્ટમથી બિઝનેસ કેવી રીતે વધશે તેનું પ્રેક્ટિકલ પ્લાનિંગ કરીશું.
+                    અમારો ઉદ્દેશ્ય માત્ર ફી લેવાનો નથી, તમારા બિઝનેસને ખરેખર 10x આગળ વધારવાનો છે. એટલે જ પહેલી પરિચય મીટિંગ બિલકુલ નિઃશુલ્ક (FREE) રાખી છે!
                 </p>
             </div>
 
-            <!-- 4 Plans Grid -->
+            <!-- TOP BANNER CARD: 1 TIME MEETING FREE (₹0) -->
+            <div class="mb-10 rounded-3xl p-6 sm:p-8 bg-gradient-to-r from-emerald-950 via-royal-900 to-emerald-950 border-2 border-emerald-400 free-glow">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+                    <div class="lg:col-span-8 space-y-2">
+                        <div class="flex flex-wrap items-center gap-2">
+                            <span class="px-3 py-1 rounded-lg bg-emerald-400 text-royal-950 text-xs font-black uppercase">STEP 0 • 100% FREE</span>
+                            <span class="text-emerald-300 text-xs sm:text-sm font-bold">કોઈપણ વેપારી કે AI શીખવા માંગતા મિત્રો માટે</span>
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-black text-white">
+                            🎁 ૧લી બિઝનેસ અને AI ચર્ચા મીટિંગ — બિલકુલ ફ્રી (₹0)
+                        </h3>
+                        <p class="text-slate-300 text-sm sm:text-base">
+                            ૧૫ થી ૨૦ મિનિટનો સીધો કોલ/મીટિંગ • તમારા બિઝનેસની સમસ્યા જણાવો • અમે તમને કેવી રીતે મદદ કરીશું તે સમજો • કોઈ જ બંધન નહીં!
+                        </p>
+                    </div>
+                    <div class="lg:col-span-4 text-center lg:text-right">
+                        <button onclick="openFreeMeetingModal()" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-royal-950 font-black text-base shadow-xl transition transform hover:scale-105 inline-flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            <span>૧લી ફ્રી મીટિંગ બુક કરો (₹0)</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4 Paid Deep-Dive Plans Grid (₹1,000 to ₹10,000) -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
                 
                 <!-- Plan 1: ₹1,000 -->
@@ -354,21 +502,21 @@
                             <i class="fa-solid fa-mug-hot text-saffron-400 text-xl"></i>
                         </div>
                         <h3 class="text-xl font-extrabold text-white">પ્રારંભ મીટિંગ (Discovery Meet)</h3>
-                        <p class="text-xs text-slate-400 mt-1">ખાલી મળવાનો અને પ્રાથમિક સમજણનો પ્લાન</p>
+                        <p class="text-xs text-slate-400 mt-1">રૂબરૂ/ઓનલાઈન મળીને ડીપમાં સમજવાનો પ્લાન</p>
                         
                         <div class="my-6 pb-6 border-b border-slate-800">
                             <span class="text-4xl font-black text-white">₹1,000</span>
-                            <span class="text-xs text-slate-400 block mt-1">૪૫ થી ૬૦ મિનિટ (Online / રૂબરૂ ચર્ચા)</span>
+                            <span class="text-xs text-slate-400 block mt-1">૬૦ મિનિટ સમર્પિત વન-ટુ-વન મીટિંગ</span>
                         </div>
 
                         <ul class="space-y-3 text-sm text-slate-300 mb-6">
                             <li class="flex items-start gap-2.5">
                                 <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
-                                <span>તમારા હાલના બિઝનેસની સમસ્યાઓ અને અટકાવ (Bottlenecks) સાંભળવા અને સમજવા.</span>
+                                <span>તમારા બિઝનેસના અટકાવ (Bottlenecks) નું ઊંડાણપૂર્વક વિશ્લેષણ.</span>
                             </li>
                             <li class="flex items-start gap-2.5">
                                 <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
-                                <span>તમારા ધંધામાં AI અને IT ક્યાં વપરાય તેની પ્રાથમિક દિશા બતાવવી.</span>
+                                <span>તમારા ધંધામાં AI અને IT ક્યાં વપરાય તેનો પ્રેક્ટિકલ મેપ.</span>
                             </li>
                             <li class="flex items-start gap-2.5">
                                 <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
@@ -391,25 +539,25 @@
                             <i class="fa-solid fa-robot text-blue-400 text-xl"></i>
                         </div>
                         <h3 class="text-xl font-extrabold text-white">AI અને ગ્રોથ બ્લુપ્રિન્ટ (AI & Expansion)</h3>
-                        <p class="text-xs text-slate-400 mt-1">AI શીખવા અને માર્કેટિંગ સમજવા માટે</p>
+                        <p class="text-xs text-slate-400 mt-1">AI શીખવા અને માર્કેટિંગ ઓટોમેશન માટે</p>
                         
                         <div class="my-6 pb-6 border-b border-slate-800">
                             <span class="text-4xl font-black text-white">₹3,000</span>
-                            <span class="text-xs text-slate-400 block mt-1">૨ કલાકનું ડીપ સેશન (Practical Demo સાથે)</span>
+                            <span class="text-xs text-slate-400 block mt-1">૨ કલાકનું ડીપ સેશન (Live AI Demo સાથે)</span>
                         </div>
 
                         <ul class="space-y-3 text-sm text-slate-300 mb-6">
                             <li class="flex items-start gap-2.5">
                                 <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
-                                <span>તમારા બિઝનેસ માટે કયા AI Tools (ChatGPT, Automation, CRM) વાપરવા તેનું લાઈવ ડેમોન્સ્ટ્રેશન.</span>
+                                <span>તમારા બિઝનેસ માટે બેસ્ટ AI Tools (ChatGPT, Automation, CRM) નું લાઈવ ટ્રેનિંગ.</span>
                             </li>
                             <li class="flex items-start gap-2.5">
                                 <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
-                                <span>WhatsApp ઓટોમેશન અને ડિજિટલ લીડ જનરેશન કેવી રીતે સેટ કરવું તેની સમજણ.</span>
+                                <span>WhatsApp ઓટોમેશન અને ડિજિટલ લીડ જનરેશન સેટઅપ ગાઈડ.</span>
                             </li>
                             <li class="flex items-start gap-2.5">
                                 <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
-                                <span>તમારો સમય બચાવવા માટેની પર્સનલાઈઝ્ડ AI માર્ગદર્શિકા.</span>
+                                <span>રોજના ૩ કલાક બચાવતી AI સિસ્ટમ.</span>
                             </li>
                         </ul>
                     </div>
@@ -423,7 +571,7 @@
                 <!-- Plan 3: ₹5,000 (MOST POPULAR) -->
                 <div class="glass-card rounded-3xl p-6 flex flex-col justify-between border-2 border-gold-400 relative transform lg:-translate-y-2 shadow-2xl shadow-saffron-500/20">
                     <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full saffron-gradient text-white text-xs font-extrabold tracking-wide shadow">
-                        🔥 સૌથી વધુ પસંદગી (MOST POPULAR)
+                        🔥 સૌથી વધુ પસંદગી (10x GROWTH)
                     </div>
                     <div>
                         <div class="flex justify-between items-center mb-4 mt-2">
@@ -435,21 +583,21 @@
                         
                         <div class="my-6 pb-6 border-b border-slate-800">
                             <span class="text-4xl font-black gold-text">₹5,000</span>
-                            <span class="text-xs text-slate-400 block mt-1">૨ અલગ-અલગ મીટિંગ્સ + કસ્ટમ રોડમેપ PDF</span>
+                            <span class="text-xs text-slate-400 block mt-1">૨ ડીપ મીટિંગ્સ + 90 દિવસનો લેખિત રોડમેપ</span>
                         </div>
 
                         <ul class="space-y-3 text-sm text-slate-200 mb-6">
                             <li class="flex items-start gap-2.5">
                                 <i class="fa-solid fa-circle-check text-gold-400 mt-1"></i>
-                                <span><strong>બિઝનેસ કેવી રીતે કરાવડાવો:</strong> સ્ટાફ મેનેજમેન્ટ, કામની સોંપણી (Delegation) અને રિપોર્ટિંગ સિસ્ટમ.</span>
+                                <span><strong>બિઝનેસ કેવી રીતે કરાવડાવો:</strong> સ્ટાફ મેનેજમેન્ટ, SOP અને રિપોર્ટિંગ સિસ્ટમ.</span>
                             </li>
                             <li class="flex items-start gap-2.5">
                                 <i class="fa-solid fa-circle-check text-gold-400 mt-1"></i>
-                                <span>તમારા આખા બિઝનેસનું 360° પોસ્ટમોર્ટમ (વેચાણ, માર્કેટિંગ, ઓપરેશન્સ).</span>
+                                <span>તમારા આખા બિઝનેસનું 360° ઓડિટ (વેચાણ, માર્કેટિંગ, ઓપરેશન્સ).</span>
                             </li>
                             <li class="flex items-start gap-2.5">
                                 <i class="fa-solid fa-circle-check text-gold-400 mt-1"></i>
-                                <span>આગામી 90 દિવસમાં ધંધો ડબલ કેવી રીતે કરવો તેનો લેખિત Action Plan.</span>
+                                <span>90 દિવસમાં ધંધો 2x થી 10x કરવાનો પ્રેક્ટિકલ Action Plan.</span>
                             </li>
                         </ul>
                     </div>
@@ -478,7 +626,7 @@
                         <ul class="space-y-3 text-sm text-slate-300 mb-6">
                             <li class="flex items-start gap-2.5">
                                 <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
-                                <span>તમારા બિઝનેસના દરેક વિભાગ (Sales, HR, Tech, Accounts) નું ઊંડાણપૂર્વક માળખું તૈયાર કરવું.</span>
+                                <span>તમારા બિઝનેસના દરેક વિભાગ (Sales, HR, Tech, Accounts) નું સંપૂર્ણ માળખું.</span>
                             </li>
                             <li class="flex items-start gap-2.5">
                                 <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
@@ -486,7 +634,7 @@
                             </li>
                             <li class="flex items-start gap-2.5">
                                 <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
-                                <span>કસ્ટમ સોફ્ટવેર, વેબસાઈટ કે એપ બનાવવી હોય તો તેનું સંપૂર્ણ ટેકનિકલ આર્કિટેક્ચર.</span>
+                                <span>કસ્ટમ સોફ્ટવેર, વેબસાઈટ કે એપ માટે સંપૂર્ણ ટેકનિકલ આર્કિટેક્ચર.</span>
                             </li>
                         </ul>
                     </div>
@@ -501,7 +649,7 @@
         </div>
     </section>
 
-    <!-- SECTION 4: DEEP BUSINESS & AI MODULES (INTERACTIVE TABS) -->
+    <!-- SECTION: DEEP BUSINESS & AI MODULES (INTERACTIVE TABS) -->
     <section id="modules" class="py-16 md:py-24 bg-royal-900/70 border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-12">
@@ -509,12 +657,8 @@
                 <h2 class="text-2xl sm:text-4xl font-black text-white mt-2">
                     મીટિંગમાં આપણે <span class="gold-text">કયા-કયા મોડ્યુલ્સ ડીપમાં</span> સમજીશું?
                 </h2>
-                <p class="text-slate-400 mt-2 text-sm sm:text-base">
-                    નીચેના દરેક મોડ્યુલ પર ક્લિક કરીને જુઓ કે અમે તમારા બિઝનેસને કેવી રીતે સ્ટેપ-બાય-સ્ટેપ ઓટોપાઈલટ મોડ પર લઈ જઈએ છીએ.
-                </p>
             </div>
 
-            <!-- Interactive Module Selector Buttons -->
             <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-10">
                 <button onclick="selectModule(0)" id="mod-btn-0" class="mod-btn px-4 py-3 rounded-xl font-bold text-xs sm:text-sm saffron-gradient text-white shadow-lg transition">
                     ૧. બિઝનેસ કેવી રીતે કરવો (Foundation)
@@ -533,14 +677,11 @@
                 </button>
             </div>
 
-            <!-- Dynamic Module Content Display -->
-            <div id="module-display" class="glass-card rounded-3xl p-6 sm:p-10 border border-saffron-500/40">
-                <!-- Populated by JS -->
-            </div>
+            <div id="module-display" class="glass-card rounded-3xl p-6 sm:p-10 border border-saffron-500/40"></div>
         </div>
     </section>
 
-    <!-- SECTION 5: AI LEARNING & FAST GROWTH HUB -->
+    <!-- SECTION: AI LEARNING & LIVE DOOT AI ADVISOR -->
     <section id="ai-growth" class="py-16 md:py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
@@ -552,7 +693,7 @@
                         કોડિંગ વગર <span class="gold-text">AI શીખો</span> અને તમારા કામની સ્પીડ 10 ગણી વધારો!
                     </h2>
                     <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-                        આજના સમયમાં જે વેપારી કે પ્રોફેશનલ AI નહીં શીખે તે પાછળ રહી જશે. અમે તમને ભારેખમ ટેકનિકલ શબ્દો વગર, એકદમ સરળ ગુજરાતીમાં શીખવાડીશું કે તમારા રોજિંદા ધંધામાં AI કેવી રીતે વાપરવું:
+                        આજના સમયમાં જે વેપારી કે પ્રોફેશનલ AI નહીં શીખે તે પાછળ રહી જશે. અમે તમને સરળ ગુજરાતીમાં શીખવાડીશું કે તમારા રોજિંદા ધંધામાં AI કેવી રીતે વાપરવું:
                     </p>
 
                     <div class="space-y-4 pt-2">
@@ -567,7 +708,7 @@
                             <div class="w-10 h-10 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center shrink-0 font-bold">2</div>
                             <div>
                                 <h4 class="font-bold text-white text-base">WhatsApp & CRM ઓટોમેશન</h4>
-                                <p class="text-xs sm:text-sm text-slate-400 mt-1">તમે સૂતા હોવ તો પણ રાત્રે 2 વાગ્યે ગ્રાહકને WhatsApp પર ભાવપત્રક (Quotation) અને જવાબ ઓટોમેટિક મળી જાય તેવી સિસ્ટમ.</p>
+                                <p class="text-xs sm:text-sm text-slate-400 mt-1">રાત્રે 2 વાગ્યે પણ ગ્રાહકને WhatsApp પર ભાવપત્રક (Quotation) અને જવાબ ઓટોમેટિક મળી જાય તેવી સિસ્ટમ.</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-4 p-4 rounded-2xl bg-slate-900/90 border border-slate-800">
@@ -600,20 +741,19 @@
                         <div id="ai-chat-box" class="bg-royal-950/90 rounded-2xl p-4 h-64 overflow-y-auto space-y-3 text-sm border border-slate-800 mb-4">
                             <div class="bg-slate-900 p-3.5 rounded-2xl rounded-tl-none text-slate-200 border border-slate-800">
                                 <span class="text-gold-400 font-bold block text-xs mb-1">🚩 દૂત AI (રામદૂત ઇન્ફોટેક):</span>
-                                જય શ્રી કષ્ટભંજન દેવ! હું દૂત AI છું. નીચેનામાંથી કોઈપણ બિઝનેસ સવાલ પર ક્લિક કરો અથવા તમારો પ્રશ્ન લખો:
+                                જય શ્રી કષ્ટભંજન દેવ! હું દૂત AI છું. તમે તમારો બિઝનેસ કેવી રીતે 10x વધારવા માંગો છો? નીચે ક્લિક કરો:
                             </div>
                         </div>
 
-                        <!-- Quick Prompt Pills -->
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <button onclick="askDootAI('મારા બિઝનેસમાં વેચાણ અટકી ગયું છે, શું કરવું?')" class="text-xs bg-slate-800 hover:bg-saffron-600 text-slate-200 px-3 py-1.5 rounded-lg transition">
-                                📈 વેચાણ કેવી રીતે વધારવું?
+                            <button onclick="askDootAI('મારે ૧લી ફ્રી મીટિંગ કેવી રીતે બુક કરવી?')" class="text-xs bg-emerald-900/60 border border-emerald-500/40 hover:bg-emerald-600 text-emerald-200 px-3 py-1.5 rounded-lg transition font-bold">
+                                🎁 ૧લી ફ્રી મીટિંગ કેવી રીતે થાય?
                             </button>
-                            <button onclick="askDootAI('સ્ટાફ ટકતો નથી અને કામ સમયસર નથી થતું.')" class="text-xs bg-slate-800 hover:bg-saffron-600 text-slate-200 px-3 py-1.5 rounded-lg transition">
+                            <button onclick="askDootAI('મારા બિઝનેસમાં વેચાણ 10x કેવી રીતે વધારવું?')" class="text-xs bg-slate-800 hover:bg-saffron-600 text-slate-200 px-3 py-1.5 rounded-lg transition">
+                                📈 વેચાણ 10x કેવી રીતે વધારવું?
+                            </button>
+                            <button onclick="askDootAI('સ્ટાફ પાસેથી કામ લેવાની સિસ્ટમ શું છે?')" class="text-xs bg-slate-800 hover:bg-saffron-600 text-slate-200 px-3 py-1.5 rounded-lg transition">
                                 👥 સ્ટાફ પાસેથી કામ કેવી રીતે લેવું?
-                            </button>
-                            <button onclick="askDootAI('મારે કયો મીટિંગ પ્લાન (₹1000 કે ₹5000) લેવો જોઈએ?')" class="text-xs bg-slate-800 hover:bg-saffron-600 text-slate-200 px-3 py-1.5 rounded-lg transition">
-                                💡 મારા માટે કયો પ્લાન બેસ્ટ છે?
                             </button>
                         </div>
 
@@ -629,123 +769,77 @@
         </div>
     </section>
 
-    <!-- SECTION 6: ANTI-FRAUD / 100% AUTHENTICITY & TRUST GUARANTEE -->
-    <section id="trust" class="py-16 bg-gradient-to-b from-royal-900 to-royal-950 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="glass-card rounded-3xl p-8 md:p-12 border border-emerald-500/30">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                    <div class="lg:col-span-8 space-y-4">
-                        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold">
-                            <i class="fa-solid fa-shield-heart"></i>
-                            <span>100% GENUINE & TRUSTWORTHY PLATFORM</span>
-                        </div>
-                        <h2 class="text-2xl sm:text-3xl font-black text-white">
-                            શા માટે રામદૂત ઇન્ફોટેક પર <span class="text-emerald-400">૧૦૦% ભરોસો</span> કરી શકાય? (No Fake Promises)
-                        </h2>
-                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-                            આજકાલ ઓનલાઇન માર્કેટમાં ઘણા લોકો ખોટા સપના બતાવીને મોટી ફી પડાવે છે. પરંતુ <strong class="text-white">રામદૂત ઇન્ફોટેક</strong> શ્રી કષ્ટભંજન દેવના આદર્શો પર ચાલતી કંપની છે. અમારા ફાઉન્ડર પોતે <strong class="text-gold-400">8+ વર્ષનો સોફ્ટવેર અને .NET ડેવલપમેન્ટનો વાસ્તવિક અનુભવ</strong> ધરાવે છે.
-                        </p>
-                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-3">
-                            <div class="p-4 rounded-xl bg-royal-950/80 border border-slate-800">
-                                <div class="text-emerald-400 font-extrabold text-base mb-1">✓ ફેસ-ટુ-ફેસ મીટિંગ</div>
-                                <p class="text-xs text-slate-400">માત્ર ₹1,000 થી શરૂ થતી મીટિંગમાં પહેલા રૂબરૂ કે લાઈવ વિડિયો કોલ પર વાત કરો.</p>
-                            </div>
-                            <div class="p-4 rounded-xl bg-royal-950/80 border border-slate-800">
-                                <div class="text-emerald-400 font-extrabold text-base mb-1">✓ પ્રેક્ટિકલ IT અનુભવ</div>
-                                <p class="text-xs text-slate-400">માત્ર વાતો નહીં, 8 વર્ષના કોડિંગ અને સિસ્ટમ આર્કિટેક્ચરના અનુભવથી સાચું સોલ્યુશન.</p>
-                            </div>
-                            <div class="p-4 rounded-xl bg-royal-950/80 border border-slate-800">
-                                <div class="text-emerald-400 font-extrabold text-base mb-1">✓ સ્ટેપ-બાય-સ્ટેપ પેમેન્ટ</div>
-                                <p class="text-xs text-slate-400">પહેલા નાના પ્લાનથી સંતોષ થાય પછી જ આગળના મોટા પ્રોજેક્ટમાં જોડાવાનો વિકલ્પ.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="lg:col-span-4 text-center">
-                        <div class="p-6 rounded-2xl bg-royal-950 border border-gold-500/30 space-y-4">
-                            <div class="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto text-3xl">
-                                <i class="fa-brands fa-whatsapp"></i>
-                            </div>
-                            <h3 class="text-lg font-bold text-white">કોઈ શંકા કે પ્રશ્ન છે?</h3>
-                            <p class="text-xs text-slate-400">કોઈપણ પ્લાન ખરીદતા પહેલા અમારી સાથે સીધા WhatsApp પર વાત કરો અને સંપૂર્ણ ખાતરી કરો.</p>
-                            <button onclick="openWhatsAppDirect('નમસ્તે! મારે રામદૂત ઇન્ફોટેકની સર્વિસ અને મીટિંગ વિશે વાત કરવી છે.')" class="w-full py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm transition shadow-lg">
-                                ડાયરેક્ટ WhatsApp ચર્ચા કરો
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
+    <!-- FOOTER WITH CUSTOM LOGO -->
     <footer class="bg-royal-950 border-t border-slate-900 py-12 text-slate-400 text-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 rounded-xl saffron-gradient flex items-center justify-center text-white">
-                    <i class="fa-solid fa-om"></i>
+                <div class="w-11 h-11 rounded-xl gold-gradient p-0.5 flex items-center justify-center">
+                    <div class="w-full h-full bg-royal-950 rounded-[10px] flex items-center justify-center text-gold-400 font-black">
+                        🚩
+                    </div>
                 </div>
                 <div>
-                    <span class="text-lg font-black text-white">રામદૂત ઇન્ફોટેક (Ramdoot Infotech)</span>
-                    <p class="text-xs text-slate-500">શ્રી કષ્ટભંજન દેવ પ્રેરિત IT, AI & Business Consulting</p>
+                    <span class="text-lg font-black text-white">રામદૂત <span class="text-saffron-500">ઇન્ફોટેક</span> (Ramdoot Infotech)</span>
+                    <p class="text-xs text-slate-500">શ્રી કષ્ટભંજન દેવ પ્રેરિત IT, AI & 10x Business Growth Platform</p>
                 </div>
             </div>
             <div class="text-center md:text-right text-xs text-slate-500">
                 <p>Photo Credit: King of Salangpur Statue via Wikimedia Commons (CC BY-SA 4.0)</p>
-                <p class="mt-1">© 2026 Ramdoot Infotech. Built with Enterprise Architecture & Devotion.</p>
+                <p class="mt-1">© 2026 Ramdoot Infotech. 1st Consultation 100% Free.</p>
             </div>
         </div>
     </footer>
 
-    <!-- STICKY MOBILE BOTTOM BAR (FOR HIGH CONVERSION ON PHONES) -->
+    <!-- STICKY MOBILE BOTTOM BAR -->
     <div class="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-royal-950/95 backdrop-blur-lg border-t border-slate-800 px-3 py-2.5 flex gap-2">
-        <a href="#pricing-plans" class="flex-1 py-2.5 rounded-xl saffron-gradient text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow">
-            <i class="fa-solid fa-calendar-check"></i>
-            <span>પ્લાન જુઓ (₹1K-₹10K)</span>
-        </a>
-        <button onclick="openWhatsAppDirect('જય શ્રી રામ! મારે રામદૂત ઇન્ફોટેકમાં બિઝનેસ મીટિંગ બુક કરવી છે.')" class="flex-1 py-2.5 rounded-xl bg-emerald-600 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow">
-            <i class="fa-brands fa-whatsapp text-base"></i>
-            <span>WhatsApp મેસેજ</span>
+        <button onclick="openFreeMeetingModal()" class="flex-1 py-3 rounded-xl bg-emerald-500 text-royal-950 font-black text-xs flex items-center justify-center gap-1.5 shadow-lg">
+            <i class="fa-solid fa-gift"></i>
+            <span>૧લી મીટિંગ FREE બુક કરો</span>
         </button>
+        <a href="#share-business" class="flex-1 py-3 rounded-xl saffron-gradient text-white font-extrabold text-xs flex items-center justify-center gap-1.5 shadow-lg">
+            <i class="fa-solid fa-rocket"></i>
+            <span>બિઝનેસ 10x ગ્રો કરો</span>
+        </a>
     </div>
 
     <!-- FLOATING WHATSAPP BUTTON (DESKTOP) -->
-    <button onclick="openWhatsAppDirect('જય શ્રી રામ! મારે રામદૂત ઇન્ફોટેક વિશે માહિતી જોઈએ છે.')" class="hidden md:flex fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white items-center justify-center shadow-2xl shadow-emerald-600/50 transition transform hover:scale-110" title="WhatsApp પર મેસેજ કરો">
-        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    <button onclick="openFreeMeetingModal()" class="hidden md:flex fixed bottom-6 right-6 z-40 px-5 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white items-center gap-2.5 shadow-2xl shadow-emerald-600/50 transition transform hover:scale-105 font-extrabold text-sm">
+        <i class="fa-brands fa-whatsapp text-2xl"></i>
+        <span>૧લી મીટિંગ FREE બુક કરો</span>
     </button>
 
-    <!-- BOOKING MODAL FOR PLANS (WHATSAPP LEAD CAPTURE) -->
+    <!-- MODAL: FREE 1ST MEETING / PLAN BOOKING -->
     <div id="plan-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="glass-card rounded-3xl max-w-md w-full p-6 sm:p-8 border border-gold-400/50 relative">
+        <div class="glass-card rounded-3xl max-w-md w-full p-6 sm:p-8 border-2 border-gold-400 relative">
             <button onclick="closePlanModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl">
                 <i class="fa-solid fa-xmark"></i>
             </button>
-            <div class="inline-block px-3 py-1 rounded-full bg-saffron-500/20 text-gold-400 text-xs font-bold mb-2">
-                🚩 શ્રી કષ્ટભંજન દેવ કૃપા
+            <div class="inline-block px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-extrabold mb-2">
+                🚩 રામદૂત ઇન્ફોટેક • 10x બિઝનેસ ગ્રોથ
             </div>
-            <h3 id="modal-plan-title" class="text-xl font-black text-white">મીટિંગ બુક કરો</h3>
-            <p class="text-xs text-slate-400 mt-1 mb-5">તમારી વિગત ભરો, ક્લિક કરતા જ સીધો અમારા WhatsApp પર તમારો મેસેજ ખુલશે.</p>
+            <h3 id="modal-plan-title" class="text-xl font-black text-white">🎁 ૧લી ફ્રી મીટિંગ બુક કરો (₹0)</h3>
+            <p class="text-xs text-slate-300 mt-1 mb-5">તમારો બિઝનેસ શેર કરો, ક્લિક કરતા જ સીધો અમારા WhatsApp પર મેસેજ ખુલશે.</p>
 
             <form onsubmit="submitPlanToWhatsApp(event)" class="space-y-4">
-                <input type="hidden" id="selected-plan-name">
+                <input type="hidden" id="selected-plan-name" value="૧લી ફ્રી બિઝનેસ મીટિંગ (100% FREE)">
                 <div>
                     <label class="block text-xs text-slate-300 mb-1 font-semibold">તમારું નામ *</label>
                     <input type="text" id="lead-name" required placeholder="દા.ત. રાજેશભાઈ પટેલ" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:border-saffron-500 focus:outline-none">
                 </div>
                 <div>
-                    <label class="block text-xs text-slate-300 mb-1 font-semibold">તમારા બિઝનેસનું નામ / કામ *</label>
-                    <input type="text" id="lead-biz" required placeholder="દા.ત. મેન્યુફેક્ચરિંગ / શોરૂમ / સર્વિસ / સ્ટુડન્ટ" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:border-saffron-500 focus:outline-none">
+                    <label class="block text-xs text-slate-300 mb-1 font-semibold">તમારા બિઝનેસનું નામ અને કામ *</label>
+                    <input type="text" id="lead-biz" required placeholder="દા.ત. ફેક્ટરી / દુકાન / ઓફિસ / સ્ટાર્ટઅપ" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:border-saffron-500 focus:outline-none">
                 </div>
                 <div>
-                    <label class="block text-xs text-slate-300 mb-1 font-semibold">તમારે મુખ્ય શું શીખવું કે ઉકેલવું છે?</label>
+                    <label class="block text-xs text-slate-300 mb-1 font-semibold">તમારે બિઝનેસમાં શું 10x ગ્રો કરવું છે?</label>
                     <select id="lead-goal" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:border-saffron-500 focus:outline-none">
-                        <option value="બિઝનેસનો ગ્રોથ અને વિસ્તાર કરવો છે">બિઝનેસનો ગ્રોથ અને વિસ્તાર કરવો છે</option>
+                        <option value="બિઝનેસ શેર કરીને 10x ગ્રોથ પ્લાન જાણવો છે">બિઝનેસ શેર કરીને 10x ગ્રોથ પ્લાન જાણવો છે</option>
                         <option value="AI શીખવું છે અને ધંધામાં ગોઠવવું છે">AI શીખવું છે અને ધંધામાં ગોઠવવું છે</option>
                         <option value="સ્ટાફ પાસેથી કામ લેવાની સિસ્ટમ બનાવવી છે">સ્ટાફ પાસેથી કામ લેવાની સિસ્ટમ બનાવવી છે</option>
                         <option value="નવી વેબસાઈટ / સોફ્ટવેર બનાવવું છે">નવી વેબસાઈટ / સોફ્ટવેર બનાવવું છે</option>
                     </select>
                 </div>
-                <button type="submit" class="w-full py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-sm flex items-center justify-center gap-2 shadow-lg">
+                <button type="submit" class="w-full py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-royal-950 font-black text-sm flex items-center justify-center gap-2 shadow-lg">
                     <i class="fa-brands fa-whatsapp text-lg"></i>
                     <span>WhatsApp પર મીટિંગ કન્ફર્મ કરો</span>
                 </button>
@@ -755,9 +849,8 @@
 
     <script>
         // DEVELOPER CONFIG: તમારો 10 અંકનો WhatsApp નંબર અહીં મૂકો (91 સાથે)
-        const ADMIN_WHATSAPP_NUMBER = "917874637877";
+        const ADMIN_WHATSAPP_NUMBER = "919876543210";
 
-        // Sarangpur Hanumanji Authentic Wikimedia Photos Switcher
         const hanumanPhotos = [
             "https://commons.wikimedia.org/wiki/Special:FilePath/King_of_Salangpur_Statue.jpg",
             "https://commons.wikimedia.org/wiki/Special:FilePath/Kashtabhanjan_dev,_Salangpur.jpg",
@@ -770,19 +863,19 @@
             document.getElementById('hanuman-hero-img').src = hanumanPhotos[currentPhotoIndex];
         }
 
-        // Mobile Menu Toggle
         function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
+            document.getElementById('mobile-menu').classList.toggle('hidden');
         }
 
-        // Direct WhatsApp Opener
         function openWhatsAppDirect(message) {
             const encodedMsg = encodeURIComponent(message);
             window.open(`https://wa.me/${ADMIN_WHATSAPP_NUMBER}?text=${encodedMsg}`, '_blank');
         }
 
-        // Plan Booking Modal
+        function openFreeMeetingModal() {
+            openPlanModal('🎁 ૧લી ફ્રી બિઝનેસ મીટિંગ (100% FREE)', '0');
+        }
+
         function openPlanModal(planTitle, price) {
             document.getElementById('modal-plan-title').innerText = planTitle;
             document.getElementById('selected-plan-name').value = planTitle;
@@ -800,23 +893,33 @@
             const biz = document.getElementById('lead-biz').value;
             const goal = document.getElementById('lead-goal').value;
 
-            const message = `જય શ્રી કષ્ટભંજન દેવ! 🙏\n\nમારે *રામદૂત ઇન્ફોટેક* માં મીટિંગ પ્લાન બુક કરવો છે:\n\n📌 *પસંદ કરેલ પ્લાન:* ${plan}\n👤 *નામ:* ${name}\n🏢 *બિઝનેસ:* ${biz}\n🎯 *મુખ્ય હેતુ:* ${goal}\n\nકૃપા કરીને મને મીટિંગનો સમય જણાવશો.`;
+            const message = `જય શ્રી કષ્ટભંજન દેવ! 🙏\n\nમારે *રામદૂત ઇન્ફોટેક* માં જોડાવું છે:\n\n📌 *પ્લાન:* ${plan}\n👤 *નામ:* ${name}\n🏢 *બિઝનેસ:* ${biz}\n🚀 *હેતુ:* ${goal}\n\nકૃપા કરીને મને મીટિંગનો સમય જણાવશો.`;
             closePlanModal();
             openWhatsAppDirect(message);
         }
 
-        // Deep Business Modules Data
+        function submitShareBusinessForm(e) {
+            e.preventDefault();
+            const name = document.getElementById('sb-name').value;
+            const city = document.getElementById('sb-city').value;
+            const biz = document.getElementById('sb-biz').value;
+            const challenge = document.getElementById('sb-challenge').value;
+
+            const message = `જય શ્રી કષ્ટભંજન દેવ! 🚩\n\n*મારો બિઝનેસ શેર કરીને 10x ગ્રો કરવો છે (1st Meeting FREE):*\n\n👤 *નામ:* ${name}\n📍 *શહેર:* ${city}\n🏢 *બિઝનેસ:* ${biz}\n🎯 *મુખ્ય પડકાર/લક્ષ્ય:* ${challenge}\n\nકૃપા કરીને મારી ૧લી ફ્રી મીટિંગ ગોઠવી આપશો.`;
+            openWhatsAppDirect(message);
+        }
+
         const modulesData = [
             {
                 title: "મોડ્યુલ ૧: બિઝનેસ કેવી રીતે કરવો? (Strong Business Foundation)",
-                subtitle: "નવો બિઝનેસ શરૂ કરવો હોય કે જૂના ધંધાને સિસ્ટમમાં લાવવો હોય તેના પાયાના નિયમો",
+                subtitle: "નવો બિઝનેસ શરૂ કરવો હોય કે જૂના ધંધાને 10x સિસ્ટમમાં લાવવો હોય તેના પાયાના નિયમો",
                 points: [
                     "બિઝનેસ મોડલ અને માર્જિન સેટઅપ: ઓછી મહેનતે વધુ નફો આપતી પ્રોડક્ટ કે સર્વિસ કેવી રીતે પસંદ કરવી.",
                     "હનુમાનજી જેવી સંકટ-નિવારણ માનસિકતા: બજારમાં મંદી કે ઉધારી ફસાય ત્યારે કેશ-ફ્લો (Cashflow) કેવી રીતે સાચવવો.",
                     "ગ્રાહકનું મનોવિજ્ઞાન: ગ્રાહક તમારી પાસેથી જ કેમ ખરીદે? તમારી બ્રાન્ડને ભરોસાપાત્ર બનાવવાની રીત.",
                     "દૈનિક ધંધાનું ટ્રેકિંગ: રોજનું વેચાણ, ખર્ચ અને નફો મોબાઈલ પર ૧ ક્લિકમાં દેખાય તેવું ડેશબોર્ડ."
                 ],
-                outcome: "પરિણામ: ધંધામાં અંધાધૂંધી બંધ થશે અને સ્પષ્ટ દિશા મળશે."
+                outcome: "પરિણામ: ધંધામાં અંધાધૂંધી બંધ થશે અને સ્પષ્ટ 10x ગ્રોથ દિશા મળશે."
             },
             {
                 title: "મોડ્યુલ ૨: બિઝનેસ કેવી રીતે કરાવડાવો? (Staff & Delegation Mastery)",
@@ -835,7 +938,7 @@
                 points: [
                     "ChatGPT, Claude અને Gemini નો બિઝનેસમાં ઉપયોગ: ઈમેલ, પ્રપોઝલ, પ્લાનિંગ અને માર્કેટ રિસર્ચ.",
                     "WhatsApp Marketing Automation: ગ્રાહકોને ઓટોમેટિક ફોલો-અપ, કેટલોગ અને ઓફર મોકલવાની સિસ્ટમ.",
-                    "AI વડે પોસ્ટર, વિડિયો અને જાહેરાત બનાવવી: મોંઘી એજન્સીના ખર્ચા વગર ઇન્સ્ટાગ્રામ/ફેસબુક માર્કેટિંગ.",
+                    "AI વડે પોસ્ટર, વિડિયો અને જાહેરાત બનાવવી: મોંઘી એજન્સીના ખર્ચા વગર સોશિયલ મીડિયા માર્કેટિંગ.",
                     "કસ્ટમ AI ચેટબોટ્સ: તમારી વેબસાઈટ કે WhatsApp પર 24 કલાક ગ્રાહકોના જવાબ આપતો AI એજન્ટ."
                 ],
                 outcome: "પરિણામ: સમય અને ખર્ચમાં 60% બચત અને કામની ઝડપમાં 10 ગણો વધારો."
@@ -844,8 +947,8 @@
                 title: "મોડ્યુલ ૪: માર્કેટિંગ અને 10x બિઝનેસ એક્સપાન્શન",
                 subtitle: "તમારા શહેરમાંથી આખા ગુજરાત, ભારત અને વિદેશમાં બિઝનેસ ફેલાવો",
                 points: [
-                    "હાઈ-કન્વર્ટિંગ વેબસાઈટ અને ઓનલાઇન પ્રેઝન્સ: ગ્રાહક જોતા જ પ્રભાવિત થાય તેવી ડિજિટલ ઓળખ.",
-                    "લીડ જનરેશન સિસ્ટમ (Facebook/Google Ads & Organic): રોજ નવા ગ્રાહકોની ઇન્ક્વાયરી તમારા WhatsApp પર લાવવી.",
+                    "હાઈ-કન્વર્ટિંગ વેબસાઈટ અને ઓનલાઇન પ્રેઝન્સ: ગ્રાહક જોતા જ જોડાઈ જાય તેવી ડિજિટલ ઓળખ.",
+                    "લીડ જનરેશન સિસ્ટમ: રોજ નવા ગ્રાહકોની ઇન્ક્વાયરી તમારા WhatsApp પર લાવવી.",
                     "ફ્રેન્ચાઇઝી અને ડિસ્ટ્રિબ્યુટર મોડલ: એક શાખામાંથી અનેક શાખાઓ કેવી રીતે ખોલવી.",
                     "CRM સિસ્ટમ: એક પણ ઇન્ક્વાયરી ભૂલાઈ ન જાય અને વેચાણમાં ફેરવાય તેનું માળખું."
                 ],
@@ -867,15 +970,12 @@
         function selectModule(idx) {
             const m = modulesData[idx];
             document.querySelectorAll('.mod-btn').forEach((btn, i) => {
-                if (i === idx) {
-                    btn.className = "mod-btn px-4 py-3 rounded-xl font-bold text-xs sm:text-sm saffron-gradient text-white shadow-lg transition";
-                } else {
-                    btn.className = "mod-btn px-4 py-3 rounded-xl font-bold text-xs sm:text-sm bg-slate-800/80 text-slate-300 hover:bg-slate-700 transition";
-                }
+                btn.className = (i === idx)
+                    ? "mod-btn px-4 py-3 rounded-xl font-bold text-xs sm:text-sm saffron-gradient text-white shadow-lg transition"
+                    : "mod-btn px-4 py-3 rounded-xl font-bold text-xs sm:text-sm bg-slate-800/80 text-slate-300 hover:bg-slate-700 transition";
             });
 
-            const container = document.getElementById('module-display');
-            container.innerHTML = `
+            document.getElementById('module-display').innerHTML = `
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                     <div class="lg:col-span-8 space-y-4">
                         <h3 class="text-xl sm:text-2xl font-black text-white">${m.title}</h3>
@@ -894,21 +994,20 @@
                             </span>
                         </div>
                     </div>
-                    <div class="lg:col-span-4 bg-royal-950/90 p-6 rounded-2xl border border-slate-800 text-center space-y-4">
-                        <div class="w-14 h-14 rounded-2xl saffron-gradient flex items-center justify-center text-white text-2xl mx-auto">
-                            <i class="fa-solid fa-chalkboard-user"></i>
+                    <div class="lg:col-span-4 bg-royal-950/90 p-6 rounded-2xl border border-emerald-500/40 text-center space-y-4">
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-2xl mx-auto">
+                            <i class="fa-solid fa-gift"></i>
                         </div>
-                        <h4 class="text-base font-bold text-white">આ મોડ્યુલ તમારા બિઝનેસમાં લાગુ કરવું છે?</h4>
-                        <p class="text-xs text-slate-400">અમારા ₹1,000 કે ₹5,000 ના મીટિંગ પ્લાનમાં આપણે આ વિષય પર તમારા ધંધાને અનુરૂપ ઊંડાણપૂર્વક પ્લાનિંગ કરીશું.</p>
-                        <button onclick="openWhatsAppDirect('જય શ્રી રામ! મારે [${m.title}] વિશે મીટિંગ બુક કરવી છે.')" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm transition">
-                            <i class="fa-brands fa-whatsapp mr-1"></i> આ મોડ્યુલ માટે WhatsApp કરો
+                        <h4 class="text-base font-bold text-white">૧લી મીટિંગમાં આ મોડ્યુલ ફ્રી સમજો!</h4>
+                        <p class="text-xs text-slate-400">તમારો બિઝનેસ શેર કરો અને પહેલી ફ્રી મીટિંગમાં જાણો કે આ મોડ્યુલ તમારા ધંધાને 10x કેવી રીતે વધારશે.</p>
+                        <button onclick="openFreeMeetingModal()" class="w-full py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-royal-950 font-black text-xs sm:text-sm transition">
+                            🎁 ૧લી ફ્રી મીટિંગ બુક કરો
                         </button>
                     </div>
                 </div>
             `;
         }
 
-        // Doot AI Interactive Chat
         function askDootAI(question) {
             const box = document.getElementById('ai-chat-box');
             box.innerHTML += `
@@ -918,14 +1017,12 @@
             `;
 
             let reply = "";
-            if (question.includes("વેચાણ")) {
-                reply = "વેચાણ વધારવા માટે ૩ કામ તરત કરો: (૧) જૂના ગ્રાહકોને WhatsApp ઓટોમેશનથી રિ-ઓર્ડર મેસેજ મોકલો, (૨) તમારી પ્રોડક્ટ/સર્વિસનું સ્પષ્ટ ડિજિટલ કેટેલોગ બનાવો, અને (૩) અમારા ₹3,000 ના AI પ્લાનમાં જોડાઈને ઓટોમેટિક લીડ જનરેશન સેટ કરો.";
-            } else if (question.includes("સ્ટાફ")) {
-                reply = "સ્ટાફ પાસેથી કામ લેવા માટે 'મૌખિક સૂચના' બંધ કરીને 'SOP અને ડેઈલી ચેકલિસ્ટ' શરૂ કરો. અમારા ₹5,000 ના 'સંજીવની પ્લાન'માં અમે તમારા સ્ટાફ માટે આખી રિપોર્ટિંગ સિસ્ટમ તૈયાર કરી આપીશું.";
-            } else if (question.includes("પ્લાન")) {
-                reply = "જો તમે પહેલીવાર મળીને માત્ર ચર્ચા કરવા માંગતા હોવ તો ₹1,000 નો 'પ્રારંભ પ્લાન' બેસ્ટ છે. પરંતુ જો તમારે બિઝનેસનું સંપૂર્ણ ઓડિટ અને 90 દિવસનો ગ્રોથ રોડમેપ જોઈતો હોય, તો ₹5,000 નો 'સંજીવની પ્લાન' સૌથી વધુ પરિણામ આપશે!";
+            if (question.includes("ફ્રી")) {
+                reply = "અમારી પહેલી ૧૫-૨૦ મિનિટની મીટિંગ ૧૦૦% ફ્રી (₹0) છે! ઉપર '૧લી મીટિંગ FREE બુક કરો' બટન દબાવો અથવા તમારો બિઝનેસ શેર કરો એટલે સીધી WhatsApp પર અપોઈન્ટમેન્ટ બુક થઈ જશે.";
+            } else if (question.includes("વેચાણ") || question.includes("10x")) {
+                reply = "બિઝનેસને 10x કરવા માટે ૩ સ્ટેપ છે: (૧) ડિજિટલ લીડ જનરેશન, (૨) WhatsApp અને AI ઓટોમેશન, અને (૩) સ્ટાફ માટે SOP સિસ્ટમ. પહેલી ફ્રી મીટિંગમાં અમે તમારા ધંધા મુજબ આ ત્રણેયનો પ્લાન બતાવીશું!";
             } else {
-                reply = "ખૂબ સરસ પ્રશ્ન! હનુમાનજીની જેમ દરેક સમસ્યાનું સમાધાન છે. તમારા આ પ્રશ્નનું તમારા બિઝનેસ મુજબ સચોટ સમાધાન મેળવવા માટે અમારો ₹1,000 નો પ્રારંભ મીટિંગ પ્લાન બુક કરો અથવા સીધા WhatsApp બટન પર ક્લિક કરો.";
+                reply = "જય શ્રી કષ્ટભંજન દેવ! તમારા બિઝનેસના આ પ્રશ્નનું સચોટ સમાધાન મેળવવા માટે અત્યારે જ અમારી '૧લી ફ્રી મીટિંગ (₹0)' બુક કરો, જેથી આપણે રૂબરૂ કે કોલ પર ઊંડાણપૂર્વક વાત કરી શકીએ.";
             }
 
             setTimeout(() => {
@@ -946,7 +1043,6 @@
             input.value = '';
         }
 
-        // Initialize Module 1 on Load
         window.onload = () => selectModule(0);
     </script>
 </body>
